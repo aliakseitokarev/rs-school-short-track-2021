@@ -26,12 +26,12 @@ class Stack extends Array {
   }
 }
 
-const stack = new Stack();
-stack.push(5);
-stack.push(6);
-stack.push(7);
-stack.peek();
-stack.pop();
-stack.peek();
+// const stack = new Stack();
+// stack.push(5);
+// stack.push(6);
+// stack.push(7);
+// stack.peek();
+// stack.pop();
+// stack.peek();
 
 module.exports = Stack;
