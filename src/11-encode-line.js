@@ -21,11 +21,9 @@ function encodeLine(str) {
   for (let i = 0; i < str.length; i++) {
     if (hashOfLetters[str[i]] === 1) {
       result += str[i];
-      console.log(result);
       hashOfLetters[str[i]] = 0;
     } else if (hashOfLetters[str[i]] > 1) {
       result += `${hashOfLetters[str[i]]}${str[i]}`;
-      console.log(result);
       hashOfLetters[str[i]] = 0;
     }
   }
