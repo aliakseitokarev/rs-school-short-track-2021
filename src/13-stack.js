@@ -10,18 +10,28 @@
  * stack.pop(); // undefined
  *
  */
-class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+class Stack extends Array {
+  push(element) {
+    this.push(element);
   }
 
   pop() {
-    throw new Error('Not implemented');
+    if (this.length === 0) throw new Error('No elements');
+    this.pop();
   }
 
   peek() {
-    throw new Error('Not implemented');
+    if (this.length === 0) throw new Error('Empty stack');
+    return this[this.length - 1];
   }
 }
+
+const stack = new Stack();
+stack.push(5);
+stack.push(6);
+stack.push(7);
+stack.peek();
+stack.pop();
+stack.peek();
 
 module.exports = Stack;
