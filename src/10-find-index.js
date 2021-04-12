@@ -12,12 +12,18 @@
  *
  */
 function findIndex(array, value) {
-  let ind = 0;
-  array.filter((el, index) => {
-    if (el === value) ind = index;
-    return el;
-  });
-  return ind;
+  let startIndex = 0;
+  let endIndex = array.length;
+  let middleIndex = Math.floor((startIndex + endIndex) / 2);
+  for (let i = 0; i < array.length; i++) {
+    if (array[middleIndex] !== value) {
+      if (value < array[middleIndex]) endIndex = middleIndex;
+      else startIndex = middleIndex;
+      middleIndex = Math.floor((startIndex + endIndex) / 2);
+    }
+    if (array[middleIndex] === value) return middleIndex;
+  }
+  return middleIndex;
 }
 
 module.exports = findIndex;
