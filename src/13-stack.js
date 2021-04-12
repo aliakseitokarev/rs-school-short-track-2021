@@ -10,28 +10,24 @@
  * stack.pop(); // undefined
  *
  */
-class Stack extends Array {
+class Stack {
+  constructor (el = []) {
+    this.el = el;
+  }
+
   push(element) {
-    this.push(element);
+    this.el.push(element);
   }
 
   pop() {
-    if (this.length === 0) throw new Error('No elements');
-    this.pop();
+    if (this.el.length === 0) throw new Error('No elements');
+    return this.el.pop();
   }
 
   peek() {
-    if (this.length === 0) throw new Error('Empty stack');
-    return this[this.length - 1];
+    if (this.el.length === 0) throw new Error('Empty stack');
+    return this.el[this.el.length - 1];
   }
 }
-
-// const stack = new Stack();
-// stack.push(5);
-// stack.push(6);
-// stack.push(7);
-// stack.peek();
-// stack.pop();
-// stack.peek();
 
 module.exports = Stack;
